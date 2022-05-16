@@ -15,7 +15,7 @@ const Books = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="flex md:flex-row flex-col justify-between items-center">
         <h2 className="text-2xl  mb-5 underline">Books Chapters</h2>
         <Search placeholder="input search text" className="w-80" />
       </div>

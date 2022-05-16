@@ -3,7 +3,7 @@ import React from "react";
 const BestPaper = () => {
   return (
     <>
-      <h1 className="text-2xl mb-8">Best Paper Awards</h1>
+      <h1 className="text-2xl underline mb-8">Best Paper Awards</h1>
 
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
         {Array.from(Array(4).keys()).map((item) => (

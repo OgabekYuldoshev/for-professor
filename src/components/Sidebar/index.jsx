@@ -3,6 +3,19 @@ import React from "react";
 import "./style.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import {
+  BarChartOutlined,
+  BookOutlined,
+  BranchesOutlined,
+  CameraOutlined,
+  FileTextOutlined,
+  GiftOutlined,
+  HomeOutlined,
+  MessageOutlined,
+  PhoneOutlined,
+  UsergroupAddOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 
 const Sidebar = ({ setSide }) => {
   const navigate = useNavigate();
@@ -31,13 +44,25 @@ const Sidebar = ({ setSide }) => {
         defaultSelectedKeys={[location.pathname]}
         mode="inline"
       >
-        <Menu.Item key="/" onClick={() => navigate("/")}>
+        <Menu.Item
+          icon={<HomeOutlined />}
+          key="/"
+          onClick={() => navigate("/")}
+        >
           Home
         </Menu.Item>
-        <Menu.Item key="/members" onClick={() => navigate("/members")}>
+        <Menu.Item
+          icon={<UsergroupAddOutlined />}
+          key="/members"
+          onClick={() => navigate("/members")}
+        >
           Memebers
         </Menu.Item>
-        <Menu.SubMenu key="/publications" title="Publications">
+        <Menu.SubMenu
+          icon={<BookOutlined />}
+          key="/publications"
+          title="Publications"
+        >
           <Menu.Item
             key="/publications/articles"
             onClick={() => navigate("/publications/articles")}
@@ -69,25 +94,47 @@ const Sidebar = ({ setSide }) => {
             Book Chapters
           </Menu.Item>
         </Menu.SubMenu>
-        <Menu.Item key="/patents" onClick={() => navigate("/patents")}>
+
+        <Menu.Item
+          icon={<FileTextOutlined />}
+          key="/patents"
+          onClick={() => navigate("/patents")}
+        >
           Patents
         </Menu.Item>
-        <Menu.Item key="/books" onClick={() => navigate("/books")}>
+        <Menu.Item
+          icon={<BookOutlined />}
+          key="/books"
+          onClick={() => navigate("/books")}
+        >
           Books
         </Menu.Item>
-        <Menu.Item key="/projects" onClick={() => navigate("/projects")}>
+        <Menu.Item
+          icon={<BarChartOutlined />}
+          key="/projects"
+          onClick={() => navigate("/projects")}
+        >
           Projects
         </Menu.Item>
-        <Menu.Item key="/research" onClick={() => navigate("/research")}>
+        <Menu.Item
+          icon={<MessageOutlined />}
+          key="/research"
+          onClick={() => navigate("/research")}
+        >
           Research Consultancy
         </Menu.Item>
         <Menu.Item
+          icon={<UserOutlined />}
           key="/professional"
           onClick={() => navigate("/professional")}
         >
           Professional Activities and Services
         </Menu.Item>
-        <Menu.SubMenu key="/awards" title="Awards and Recognations">
+        <Menu.SubMenu
+          icon={<GiftOutlined />}
+          key="/awards"
+          title="Awards and Recognations"
+        >
           <Menu.Item
             key="/awards/award"
             onClick={() => navigate("/awards/award")}
@@ -108,15 +155,24 @@ const Sidebar = ({ setSide }) => {
           </Menu.Item>
         </Menu.SubMenu>
         <Menu.Item
+          icon={<BranchesOutlined />}
           key="/collaborations"
           onClick={() => navigate("/collaborations")}
         >
           Research Collaborations
         </Menu.Item>
-        <Menu.Item key="/gallery" onClick={() => navigate("/gallery")}>
+        <Menu.Item
+          icon={<CameraOutlined />}
+          key="/gallery"
+          onClick={() => navigate("/gallery")}
+        >
           Gallery
         </Menu.Item>
-        <Menu.Item key="/contacts" onClick={() => navigate("/contacts")}>
+        <Menu.Item
+          icon={<PhoneOutlined />}
+          key="/contacts"
+          onClick={() => navigate("/contacts")}
+        >
           Contacts
         </Menu.Item>
       </Menu>
