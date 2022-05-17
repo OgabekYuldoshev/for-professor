@@ -1,9 +1,30 @@
-import { KeyOutlined } from "@ant-design/icons";
+import { motion } from "framer-motion";
 import React from "react";
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 0,
+  },
+  in: {
+    opacity: 1,
+    y: -20,
+  },
+  out: {
+    opacity: 0,
+    y: 0,
+  },
+};
 
 const Collaboration = () => {
   return (
-    <>
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      transition={{ duration: 0.5 }}
+      variants={pageVariants}
+    >
       <h1 className="text-2xl underline">Research Collaborations</h1>
       <h2 className="text-lg my-8 bg-white text-center p-2 rounded bg-blue-500 text-white">
         National
@@ -16,8 +37,8 @@ const Collaboration = () => {
           >
             <div className="flex md:justify-start justify-center">
               <div>
-                <div class="avatar">
-                  <div class="w-32 rounded-xl">
+                <div className="avatar">
+                  <div className="w-32 rounded-xl">
                     <img src="https://api.lorem.space/image/face?hash=64318" />
                   </div>
                 </div>
@@ -52,8 +73,8 @@ const Collaboration = () => {
           >
             <div className="flex md:justify-start justify-center">
               <div>
-                <div class="avatar">
-                  <div class="w-32 rounded-xl">
+                <div className="avatar">
+                  <div className="w-32 rounded-xl">
                     <img src="https://api.lorem.space/image/face?hash=64318" />
                   </div>
                 </div>
@@ -75,7 +96,7 @@ const Collaboration = () => {
           </div>
         ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 

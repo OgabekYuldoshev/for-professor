@@ -1,8 +1,29 @@
+import { motion } from "framer-motion";
 import React from "react";
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 0,
+  },
+  in: {
+    opacity: 1,
+    y: -20,
+  },
+  out: {
+    opacity: 0,
+    y: 0,
+  },
+};
 
 const BestPaper = () => {
   return (
-    <>
+    <motion.div
+    initial="initial"
+    animate="in"
+    exit="out"
+    transition={{ duration: 0.5 }}
+    variants={pageVariants}>
       <h1 className="text-2xl underline mb-8">Best Paper Awards</h1>
 
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
@@ -21,7 +42,7 @@ const BestPaper = () => {
           </div>
         ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 

@@ -1,8 +1,30 @@
+import { motion } from "framer-motion";
 import React from "react";
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 0,
+  },
+  in: {
+    opacity: 1,
+    y: -20,
+  },
+  out: {
+    opacity: 0,
+    y: 0,
+  },
+};
 
 const Articles = () => {
   return (
-    <>
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      transition={{ duration: 0.5 }}
+      variants={pageVariants}
+    >
       <h2 className="text-2xl  mb-5 underline">Highly Cited Articles</h2>
 
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
@@ -25,7 +47,7 @@ const Articles = () => {
           </div>
         ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 

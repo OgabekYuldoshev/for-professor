@@ -104,7 +104,7 @@ const Table = ({ dataSource }) => {
       width: 100,
       render: () => (
         <>
-          <button class="btn">Cite</button>
+          <button className="btn">Cite</button>
         </>
       ),
     },

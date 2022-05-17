@@ -1,8 +1,30 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 0,
+  },
+  in: {
+    opacity: 1,
+    y: -20,
+  },
+  out: {
+    opacity: 0,
+    y: 0,
+  },
+};
 
 const Members = () => {
   return (
-    <>
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      transition={{ duration: 0.5 }}
+      variants={pageVariants}
+    >
       <h1 className="text-2xl underline">Memebers</h1>
       <h2 className="text-lg my-8 bg-white text-center p-2 rounded bg-blue-500 text-white">
         Faculty Guides
@@ -16,8 +38,8 @@ const Members = () => {
             >
               <div className="flex md:justify-start justify-center">
                 <div>
-                  <div class="avatar">
-                    <div class="w-32 rounded-xl">
+                  <div className="avatar">
+                    <div className="w-32 rounded-xl">
                       <img src="https://api.lorem.space/image/face?hash=64318" />
                     </div>
                   </div>
@@ -50,7 +72,9 @@ const Members = () => {
                   dolores, tenetur est.
                 </p>
                 <div className="flex gap-2 flex-wrap mt-5">
-                  <div class="badge badge-primary cursor-pointer">primary</div>
+                  <div className="badge badge-primary cursor-pointer">
+                    primary
+                  </div>
                 </div>
               </div>
             </div>
@@ -61,8 +85,8 @@ const Members = () => {
             >
               <div className="md:hidden flex md:justify-start justify-center">
                 <div>
-                  <div class="avatar">
-                    <div class="w-32 rounded-xl">
+                  <div className="avatar">
+                    <div className="w-32 rounded-xl">
                       <img src="https://api.lorem.space/image/face?hash=64318" />
                     </div>
                   </div>
@@ -95,16 +119,18 @@ const Members = () => {
                   dolores, tenetur est.
                 </p>
                 <div className="flex gap-2 flex-wrap mt-5 md:justify-end justify-start">
-                  <div class="badge badge-primary cursor-pointer">primary</div>
-                  <div class="badge badge-secondary cursor-pointer">
+                  <div className="badge badge-primary cursor-pointer">
+                    primary
+                  </div>
+                  <div className="badge badge-secondary cursor-pointer">
                     primary
                   </div>
                 </div>
               </div>
               <div className="md:flex hidden">
                 <div>
-                  <div class="avatar">
-                    <div class="w-32 rounded-xl">
+                  <div className="avatar">
+                    <div className="w-32 rounded-xl">
                       <img src="https://api.lorem.space/image/face?hash=64318" />
                     </div>
                   </div>
@@ -121,8 +147,8 @@ const Members = () => {
       </h2>
       <div className="grid md:grid-cols-6 grid-cols-2 gap-3">
         <div className="bg-white p-8 hover:shadow-lg  rounded-lg flex flex-col items-center gap-3 transform hover:scale-105 duration-300 cursor pointer">
-          <div class="avatar">
-            <div class="w-32 rounded-xl">
+          <div className="avatar">
+            <div className="w-32 rounded-xl">
               <img src="https://api.lorem.space/image/face?hash=64318" />
             </div>
           </div>
@@ -130,8 +156,8 @@ const Members = () => {
         </div>
 
         <div className="bg-white p-8 hover:shadow-lg  rounded-lg flex flex-col items-center gap-3 transform hover:scale-105 duration-300 cursor pointer">
-          <div class="avatar">
-            <div class="w-32 rounded-xl">
+          <div className="avatar">
+            <div className="w-32 rounded-xl">
               <img src="https://api.lorem.space/image/face?hash=64318" />
             </div>
           </div>
@@ -153,8 +179,8 @@ const Members = () => {
           >
             <div className="flex md:justify-start justify-center">
               <div>
-                <div class="avatar">
-                  <div class="w-32 rounded-xl">
+                <div className="avatar">
+                  <div className="w-32 rounded-xl">
                     <img src="https://api.lorem.space/image/face?hash=64318" />
                   </div>
                 </div>
@@ -177,7 +203,7 @@ const Members = () => {
           </div>
         ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 

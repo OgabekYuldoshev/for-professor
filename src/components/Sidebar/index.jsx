@@ -31,8 +31,8 @@ const Sidebar = ({ setSide }) => {
   return (
     <div>
       <div className="flex flex-col items-center justify-center my-8">
-        <div class="avatar">
-          <div class="w-28 rounded-full">
+        <div className="avatar">
+          <div className="w-28 rounded-full">
             <img src="https://api.lorem.space/image/face?hash=92310" />
           </div>
         </div>

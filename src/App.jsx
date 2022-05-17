@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import MainLayout from "./layouts/Main";
 import HomePage from "./pages/Home";
 import MembersPage from "./pages/Members";
@@ -25,36 +26,41 @@ import ContactsPage from "./pages/Contacts";
 const App = () => {
   return (
     <MainLayout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/members" element={<MembersPage />} />
-        <Route path="/publications/articles" element={<ArticlesPage />} />
-        <Route
-          path="/publications/downloaded"
-          element={<MostDownloadedPage />}
-        />
-        <Route path="/publications/journals" element={<JournalsPage />} />
-        <Route path="/publications/conferences" element={<ConferencesPage />} />
-        <Route
-          path="/publications/book-chapters"
-          element={<BooksChapterPage />}
-        />
-        <Route path="/patents" element={<PatentsPage />} />
-        <Route path="/books" element={<BooksPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/research" element={<ResearchPage />} />
-        <Route path="/professional" element={<ProfessionalPage />} />
+      <AnimatePresence>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/members" element={<MembersPage />} />
+          <Route path="/publications/articles" element={<ArticlesPage />} />
+          <Route
+            path="/publications/downloaded"
+            element={<MostDownloadedPage />}
+          />
+          <Route path="/publications/journals" element={<JournalsPage />} />
+          <Route
+            path="/publications/conferences"
+            element={<ConferencesPage />}
+          />
+          <Route
+            path="/publications/book-chapters"
+            element={<BooksChapterPage />}
+          />
+          <Route path="/patents" element={<PatentsPage />} />
+          <Route path="/books" element={<BooksPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/research" element={<ResearchPage />} />
+          <Route path="/professional" element={<ProfessionalPage />} />
 
-        <Route path="/awards/award" element={<AwardAndRecogPage />} />
-        <Route path="/awards/grants" element={<TravelGrandsPage />} />
-        <Route path="/awards/best" element={<BestPaperPage />} />
+          <Route path="/awards/award" element={<AwardAndRecogPage />} />
+          <Route path="/awards/grants" element={<TravelGrandsPage />} />
+          <Route path="/awards/best" element={<BestPaperPage />} />
 
-        <Route path="/collaborations" element={<CollabarationPage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/collaborations" element={<CollabarationPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
 
-        <Route path="*" element={<Navigate to="/" replace={true} />} />
-      </Routes>
+          <Route path="*" element={<Navigate to="/" replace={true} />} />
+        </Routes>
+      </AnimatePresence>
     </MainLayout>
   );
 };

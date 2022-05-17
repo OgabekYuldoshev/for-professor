@@ -6,10 +6,32 @@ import {
 import { Carousel, Statistic } from "antd";
 import React from "react";
 import { config } from "../../config";
+import { motion } from "framer-motion";
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 0,
+  },
+  in: {
+    opacity: 1,
+    y: -20,
+  },
+  out: {
+    opacity: 0,
+    y: 0,
+  },
+};
 
 const Home = () => {
   return (
-    <div>
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      transition={{ duration: 0.5 }}
+      variants={pageVariants}
+    >
       <h1 className="text-2xl underline mb-8">
         {config.app.name.toUpperCase()}'S RESEARCH GROUP
       </h1>
@@ -158,7 +180,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
