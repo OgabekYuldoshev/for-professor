@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { ClipLoader } from "react-spinners";
+import useList from "../../modules/awards/useList";
 
 const pageVariants = {
   initial: {
@@ -17,6 +19,8 @@ const pageVariants = {
 };
 
 const BestPaper = () => {
+  const { items, isLoading } = useList();
+
   return (
     <motion.div
       initial="initial"
@@ -27,20 +31,32 @@ const BestPaper = () => {
     >
       <h1 className="text-2xl underline mb-8">Travel Grants</h1>
 
-      <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
-        {Array.from(Array(4).keys()).map((item) => (
-          <div
-            key={item}
-            className="bg-white rounded-lg cursor-pointer p-8 gap-8 hover:-translate-y-2 hover:shadow-lg transform duration-300 text-lg "
-          >
-            <h2 className="font-bold hover:underline">
-              Foreign Travel Grant, IEEE ICC 2021 awarded to Rajesh Gupta
-            </h2>
-            <p className="font-bold text-gray-500">IEEE ComSoc</p>
-            <p>May, 2021</p>
-          </div>
-        ))}
-      </div>
+      {isLoading && (
+        <div className="my-10 flex justify-center items-center">
+          <ClipLoader />
+        </div>
+      )}
+
+      {items?.travels?.length ? (
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
+          {items?.travels?.map((item) => (
+            <div
+              key={item}
+              className="bg-white rounded-lg cursor-pointer p-8 gap-8 hover:-translate-y-2 hover:shadow-lg transform duration-300 text-lg"
+            >
+              <a
+                href={item?.link}
+                target="_blank"
+                className="font-bold  hover:underline"
+              >
+                {item?.name}
+              </a>
+              <p className="font-bold text-gray-500">{item?.text}</p>
+              <p> {item?.date}</p>
+            </div>
+          ))}
+        </div>
+      ) : null}
     </motion.div>
   );
 };

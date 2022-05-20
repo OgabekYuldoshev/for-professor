@@ -1,0 +1,7 @@
+---
+deployment:
+ tasks:
+ - export DEPLOYPATH=/home/khojamat/public_html/
+ - export REPOSITORY=/home/khojamat/public_html/
+ - /bin/cp index.html $DEPLOYPATH
+ - /bin/cp style.css $DEPLOYPATH

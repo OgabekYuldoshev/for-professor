@@ -23,6 +23,8 @@ import CollabarationPage from "./pages/Collaboration";
 import GalleryPage from "./pages/Gallery";
 import ContactsPage from "./pages/Contacts";
 
+
+
 const App = () => {
   return (
     <MainLayout>
