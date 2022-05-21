@@ -22,10 +22,11 @@ import BestPaperPage from "./pages/Awards/BestPaper";
 import CollabarationPage from "./pages/Collaboration";
 import GalleryPage from "./pages/Gallery";
 import ContactsPage from "./pages/Contacts";
-
-
+import useUser from "./modules/contacts/useList";
 
 const App = () => {
+  useUser();
+
   return (
     <MainLayout>
       <AnimatePresence>

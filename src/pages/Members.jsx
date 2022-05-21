@@ -30,7 +30,6 @@ const Members = () => {
       transition={{ duration: 0.5 }}
       variants={pageVariants}
     >
-      
       {isLoading && (
         <div className="my-10 flex justify-center items-center">
           <ClipLoader />
@@ -158,9 +157,13 @@ const Members = () => {
                         <img src={`${config.app.baseUrl}/${item?.image}`} />
                       </div>
                     </div>
-                    <h3 className="font-bold">
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      className="font-bold hover:underline text-center"
+                    >
                       {item?.first_name} {item?.last_name} {item?.second_name}
-                    </h3>
+                    </a>
                   </div>
                 ))}
               </div>
@@ -179,9 +182,13 @@ const Members = () => {
                         <img src={`${config.app.baseUrl}/${item?.image}`} />
                       </div>
                     </div>
-                    <h3 className="font-bold">
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      className="font-bold hover:underline text-center"
+                    >
                       {item?.first_name} {item?.last_name} {item?.second_name}
-                    </h3>
+                    </a>
                   </div>
                 ))}
               </div>
@@ -200,9 +207,13 @@ const Members = () => {
                         <img src={`${config.app.baseUrl}/${item?.image}`} />
                       </div>
                     </div>
-                    <h3 className="font-bold">
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      className="font-bold hover:underline text-center"
+                    >
                       {item?.first_name} {item?.last_name} {item?.second_name}
-                    </h3>
+                    </a>
                   </div>
                 ))}
               </div>

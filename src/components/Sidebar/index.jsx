@@ -16,12 +16,17 @@ import {
   UsergroupAddOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { useQueryClient } from "react-query";
+import { config } from "../../../config";
 
 const Sidebar = ({ setSide }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const matches = useMediaQuery("(min-width: 992px)");
-
+  const queryClient = useQueryClient();
+  const data = queryClient.getQueryData(["CONTACTS"], { exact: false });
+  const item = data?.item;
+  console.log(item);
   const handleClose = () => {
     if (!matches) {
       setSide(false);
@@ -33,10 +38,18 @@ const Sidebar = ({ setSide }) => {
       <div className="flex flex-col items-center justify-center my-8">
         <div className="avatar">
           <div className="w-28 rounded-full">
-            <img src="https://api.lorem.space/image/face?hash=92310" />
+            <img
+              src={
+                item?.image
+                  ? `${config.app.baseUrl}/${item?.image}`
+                  : "https://api.lorem.space/image/face?hash=92310"
+              }
+            />
           </div>
         </div>
-        <h1 className="text-white font-bold mt-4 text-lg">Ogabek Yuldoshev</h1>
+        <h1 className="text-white font-bold mt-4 text-lg">
+          {item?.name || "User"}
+        </h1>
       </div>
       <Menu
         onSelect={handleClose}

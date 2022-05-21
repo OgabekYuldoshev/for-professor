@@ -9,8 +9,12 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { config } from "../../config";
+import { useQueryClient } from "react-query";
 
 const Main = ({ children }) => {
+  const queryClient = useQueryClient();
+  const data = queryClient.getQueryData(["CONTACTS"], { exact: false });
+  const item = data?.item;
   const [side, setSide] = useState(false);
   const matches = useMediaQuery("(min-width: 992px)");
   useEffect(() => {
@@ -44,7 +48,7 @@ const Main = ({ children }) => {
         </Layout.Content>
         <Layout.Footer className="flex md:justify-between justify-center md:flex-row flex-col items-center border-t gap-3">
           <p>
-            <span className="font-bold">{config.app.name}</span> ©{" "}
+            <span className="font-bold">{item?.name || "User"}</span> ©{" "}
             {new Date().getFullYear()}
           </p>
           <p>
