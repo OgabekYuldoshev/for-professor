@@ -1,8 +1,8 @@
 import React from "react";
 import Table from "../../components/Table";
-import { Input } from "antd";
+import { Select } from "antd";
 import { motion } from "framer-motion";
-const { Search } = Input;
+const { Option } = Select;
 
 const pageVariants = {
   initial: {
@@ -37,23 +37,15 @@ const Conferences = () => {
       transition={{ duration: 0.5 }}
       variants={pageVariants}
     >
-      <div className="flex md:flex-row flex-col justify-between items-center">
+      <div className="flex md:flex-row flex-col justify-between items-center  mb-8">
         <h2 className="text-2xl  mb-5 underline">Conferences</h2>
-        <Search placeholder="input search text" className="w-80" />
+        <Select placeholder="Select year" className="w-40">
+          <Option value="2020">2020</Option>
+          <Option value="2021">2021</Option>
+          <Option value="2022">2022</Option>
+        </Select>
       </div>
-      <div>
-        <h2 className="text-lg my-8 bg-white text-center p-2 rounded bg-blue-500 text-white">
-          20202
-        </h2>
-        <Table dataSource={dataSource} />
-      </div>
-
-      <div>
-        <h2 className="text-lg my-8 bg-white text-center p-2 rounded bg-blue-500 text-white">
-          20202
-        </h2>
-        <Table dataSource={dataSource} />
-      </div>
+      <Table dataSource={dataSource} />
     </motion.div>
   );
 };

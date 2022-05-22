@@ -99,15 +99,6 @@ const Table = ({ dataSource }) => {
         </>
       ),
     },
-    {
-      title: "Citation",
-      width: 100,
-      render: () => (
-        <>
-          <button className="btn">Cite</button>
-        </>
-      ),
-    },
   ];
 
   return <TableBase dataSource={dataSource} columns={columns} />;
