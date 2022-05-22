@@ -358,7 +358,7 @@ const Members = () => {
                     </div>
                     <div>
                       <div className="flex md:justify-start justify-center">
-                        <h2 className="font-bold cursor-pointer duration border-b border-b-transparent hover:border-b-black ease-in w-fit">
+                        <h2 className="font-bold cursor-pointer duration border-b border-b-transparent hover:border-b-black ease-in w-fit md:text-left text-center">
                           {item?.first_name} {item?.last_name}{" "}
                           {item?.second_name}
                         </h2>
@@ -398,7 +398,7 @@ const Members = () => {
                     </div>
                     <div>
                       <div className="flex md:justify-start justify-center">
-                        <h2 className="font-bold cursor-pointer duration border-b border-b-transparent hover:border-b-black ease-in w-fit">
+                        <h2 className="font-bold cursor-pointer duration border-b border-b-transparent hover:border-b-black ease-in md:text-left text-center w-fit">
                           {item?.first_name} {item?.last_name}{" "}
                           {item?.second_name}
                         </h2>
@@ -438,7 +438,7 @@ const Members = () => {
                     </div>
                     <div>
                       <div className="flex md:justify-start justify-center">
-                        <h2 className="font-bold cursor-pointer duration border-b border-b-transparent hover:border-b-black ease-in w-fit">
+                        <h2 className="font-bold cursor-pointer duration border-b border-b-transparent hover:border-b-black ease-in w-fit md:text-left text-center">
                           {item?.first_name} {item?.last_name}{" "}
                           {item?.second_name}
                         </h2>

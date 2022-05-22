@@ -7,6 +7,7 @@ import { Carousel, Statistic } from "antd";
 import React from "react";
 import { config } from "../../config";
 import { motion } from "framer-motion";
+import { useQueryClient } from "react-query";
 
 const pageVariants = {
   initial: {
@@ -24,6 +25,9 @@ const pageVariants = {
 };
 
 const Home = () => {
+  const queryClient = useQueryClient();
+  const data = queryClient.getQueryData(["CONTACTS"], { exact: false });
+  const item = data?.item;
   return (
     <motion.div
       initial="initial"
@@ -33,7 +37,7 @@ const Home = () => {
       variants={pageVariants}
     >
       <h1 className="text-2xl underline mb-8">
-        {config.app.name.toUpperCase()}'S RESEARCH GROUP
+        {item?.name?.toUpperCase() || "USER"}'S RESEARCH GROUP
       </h1>
       <Carousel>
         <img

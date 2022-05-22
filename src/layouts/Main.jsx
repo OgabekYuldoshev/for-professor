@@ -41,7 +41,7 @@ const Main = ({ children }) => {
             className="cursor-pointer block lg:hidden"
             onClick={() => setSide(true)}
           />
-          <PageHeader title={config.app.name} />
+          <PageHeader title={item?.name || "User"} />
         </div>
         <Layout.Content className="p-8 bg-gray-100 w-full min-h-auto mt-20 lg:px-12 px-5">
           {children}

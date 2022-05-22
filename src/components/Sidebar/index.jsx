@@ -26,7 +26,6 @@ const Sidebar = ({ setSide }) => {
   const queryClient = useQueryClient();
   const data = queryClient.getQueryData(["CONTACTS"], { exact: false });
   const item = data?.item;
-  console.log(item);
   const handleClose = () => {
     if (!matches) {
       setSide(false);
