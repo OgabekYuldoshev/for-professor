@@ -19,7 +19,7 @@ const pageVariants = {
 };
 
 const BestPaper = () => {
-  const { items, isLoading } = useList();
+  const { items, isLoading } = useList({ type: 4 });
 
   return (
     <motion.div
@@ -37,9 +37,9 @@ const BestPaper = () => {
         </div>
       )}
 
-      {items?.travels?.length ? (
+      {items?.length ? (
         <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
-          {items?.travels?.map((item) => (
+          {items?.map((item) => (
             <div
               key={item}
               className="bg-white rounded-lg cursor-pointer p-8 gap-8 hover:-translate-y-2 hover:shadow-lg transform duration-300 text-lg"

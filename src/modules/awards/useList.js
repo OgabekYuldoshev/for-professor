@@ -3,15 +3,13 @@ import { useQuery } from "react-query";
 import * as Api from "./api";
 import * as Mappers from "./mapper";
 
-const useList = () => {
+const useList = ({ type }) => {
     const { data, ...args } = useQuery(
-        ["AWARDS", "list"],
+        ["AWARDS", "list", type],
         async () => {
-            const { data } = await Api.List();
+            const { data } = await Api.List({ type });
 
-            const items = Mappers.Awards(data?.data);
-
-            return { items };
+            return { items: data?.data };
         },
         { keepPreviousData: true, retry: false }
     );

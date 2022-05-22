@@ -1,5 +1,9 @@
 import axios from "axios";
 import { config } from "../../../config"
 
-export const List = () => axios.get(`${config.app.baseUrl}/api/awards`);
+export const List = ({ type }) => axios.get(`${config.app.baseUrl}/api/awards`, {
+    params: {
+        type_id: type
+    }
+});
 
