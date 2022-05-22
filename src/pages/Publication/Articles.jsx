@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import useList from "../../modules/publication/useList";
 
 const pageVariants = {
   initial: {
@@ -17,6 +18,8 @@ const pageVariants = {
 };
 
 const Articles = () => {
+  const { items } = useList();
+  console.log(items);
   return (
     <motion.div
       initial="initial"

@@ -41,18 +41,22 @@ const Projects = () => {
       {items?.photo?.length ? (
         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8 mt-8">
           {items?.photo?.map((item, index) => (
-            <div
-              key={index}
-              className="card card-compact bg-base-100 shadow-xl hover:scale-105 duration-300"
-            >
-              <figure>
-                <img
-                  src={`${config.app.baseUrl}/${item.image}`}
-                  alt={item?.title}
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="text-lg font-bold">{item?.title}</h2>
+            <div>
+              <div
+                key={index}
+                className="card card-compact bg-base-100 shadow-xl hover:scale-105 duration-300"
+              >
+                <figure>
+                  <img
+                    src={`${config.app.baseUrl}/${item.image}`}
+                    alt={item?.title}
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="text-lg font-bold text-center">
+                    {item?.title}
+                  </h2>
+                </div>
               </div>
             </div>
           ))}
@@ -66,18 +70,22 @@ const Projects = () => {
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8 mt-8">
             {items?.media?.map((item, index) => (
-              <div
-                key={index}
-                className="card card-compact bg-base-100 shadow-xl hover:scale-105 duration-300"
-              >
-                <figure>
-                  <img
-                    src={`${config.app.baseUrl}/${item.image}`}
-                    alt={item?.title}
-                  />
-                </figure>
-                <div className="card-body">
-                  <h2 className="text-lg font-bold">{item?.title}</h2>
+              <div>
+                <div
+                  key={index}
+                  className="card card-compact bg-base-100 shadow-xl hover:scale-105 duration-300"
+                >
+                  <figure>
+                    <img
+                      src={`${config.app.baseUrl}/${item.image}`}
+                      alt={item?.title}
+                    />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="text-lg font-bold text-center">
+                      {item?.title}
+                    </h2>
+                  </div>
                 </div>
               </div>
             ))}

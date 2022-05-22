@@ -1,13 +1,15 @@
 import {
-  FolderOpenOutlined,
+  BookOutlined,
   LikeOutlined,
+  MessageOutlined,
   ReadOutlined,
 } from "@ant-design/icons";
 import { Carousel, Statistic } from "antd";
 import React from "react";
-import { config } from "../../config";
+// import { config } from "../../config";
 import { motion } from "framer-motion";
 import { useQueryClient } from "react-query";
+import useList from "../modules/home/useList";
 
 const pageVariants = {
   initial: {
@@ -25,6 +27,8 @@ const pageVariants = {
 };
 
 const Home = () => {
+  const { items } = useList();
+  console.log(items);
   const queryClient = useQueryClient();
   const data = queryClient.getQueryData(["CONTACTS"], { exact: false });
   const item = data?.item;
@@ -75,31 +79,31 @@ const Home = () => {
             <div className="grid md:grid-cols-3 grid-cols-2 gap-5">
               <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
-                  title="Feedback"
-                  value={1128}
-                  prefix={<LikeOutlined />}
+                  title="Journal publications"
+                  value={items?.publications?.journals || 0}
+                  prefix={<BookOutlined />}
                 />
               </div>
 
               <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
-                  title="Feedback"
-                  value={1128}
-                  prefix={<LikeOutlined />}
+                  title="Book chapters"
+                  value={items?.publications?.books || 0}
+                  prefix={<BookOutlined />}
                 />
               </div>
               <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
-                  title="Feedback"
-                  value={1128}
-                  prefix={<LikeOutlined />}
+                  title="Conference Proceedings"
+                  value={items?.publications?.conferences || 0}
+                  prefix={<MessageOutlined />}
                 />
               </div>
               <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
-                  title="Feedback"
-                  value={1128}
-                  prefix={<LikeOutlined />}
+                  title="Authored/Edited books"
+                  value={items?.publications?.authored_and_edited_books || 0}
+                  prefix={<BookOutlined />}
                 />
               </div>
             </div>
