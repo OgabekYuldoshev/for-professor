@@ -19,8 +19,8 @@ const pageVariants = {
 };
 
 const BestPaper = () => {
-  const { items, isLoading } = useList({ type: [1, 2] });
-  console.log(items);
+  const { items, isLoading } = useList({ type: 1 });
+
   return (
     <motion.div
       initial="initial"
