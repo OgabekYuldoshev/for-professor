@@ -50,6 +50,7 @@ const Home = () => {
         <Carousel>
           {items?.sliders?.map((item) => (
             <img
+              key={item}
               className="h-80 object-cover"
               src={`${config.app.baseUrl}/${item?.image}`}
               alt={item?.title}
