@@ -3,7 +3,7 @@ import { Table as TableBase, Button, Space, Input } from "antd";
 import Highlighter from "react-highlight-words";
 import { SearchOutlined } from "@ant-design/icons";
 
-const Table = ({ dataSource }) => {
+const Table = ({ loading = false, dataSource }) => {
   const [search, setSerach] = useState({
     searchText: "",
     searchedColumn: "",
@@ -91,17 +91,25 @@ const Table = ({ dataSource }) => {
       ...getColumnSearchProps("title"),
       render: (item) => (
         <>
-          <h2 className="font-bold hover:underline text-lg">{item.title}</h2>
+          <a
+            href={item?.link}
+            target="_blank"
+            className="font-bold hover:underline text-lg"
+          >
+            {item?.name}
+          </a>
           <div className="text-gray-500">
-            <p>{item.ceo}</p>
-            <p>{item.location}</p>
+            <p>{item?.direction}</p>
+            <p>{item?.author}</p>
           </div>
         </>
       ),
     },
   ];
 
-  return <TableBase dataSource={dataSource} columns={columns} />;
+  return (
+    <TableBase loading={loading} dataSource={dataSource} columns={columns} />
+  );
 };
 
 export default Table;

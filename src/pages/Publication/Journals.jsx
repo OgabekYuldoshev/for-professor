@@ -2,6 +2,7 @@ import React from "react";
 import Table from "../../components/Table";
 import { Select } from "antd";
 import { motion } from "framer-motion";
+import useList from "../../modules/publication/useList";
 const { Option } = Select;
 
 const pageVariants = {
@@ -20,6 +21,7 @@ const pageVariants = {
 };
 
 const Journals = () => {
+  const { items } = useList({ type: 3 });
   const dataSource = Array.from(Array(59).keys()).fill({
     key: 1,
     title:
@@ -45,7 +47,7 @@ const Journals = () => {
           <Option value="2022">2022</Option>
         </Select>
       </div>
-      <Table dataSource={dataSource} />
+      <Table loading={!items?.length} dataSource={items} />
     </motion.div>
   );
 };

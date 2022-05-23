@@ -2,6 +2,7 @@ import React from "react";
 import Table from "../../components/Table";
 import { Select } from "antd";
 import { motion } from "framer-motion";
+import useList from "../../modules/publication/useList";
 const { Option } = Select;
 
 const pageVariants = {
@@ -20,14 +21,7 @@ const pageVariants = {
 };
 
 const Conferences = () => {
-  const dataSource = Array.from(Array(59).keys()).fill({
-    key: 1,
-    title:
-      "Adoption of Blockchain for Data Privacy in 6G-Envisioned Augmented Reality: Opportunities and Challenges",
-    ceo: "Pronaya Bhattacharya, Farnazbanu Patel, Vishaka Ralegankar, Bhaumik Thakkar, Sudeep Tanwar & Mohammad Abouhawwash",
-    location:
-      "Emerging Technologies for Computing, Communication and Smart Cities. Lecture Notes in Electrical Engineering, vol 875. Springer, Singapore.",
-  });
+  const { items } = useList({ type: 4 });
 
   return (
     <motion.div
@@ -45,7 +39,7 @@ const Conferences = () => {
           <Option value="2022">2022</Option>
         </Select>
       </div>
-      <Table dataSource={dataSource} />
+      <Table loading={!items?.length} dataSource={items} />
     </motion.div>
   );
 };
