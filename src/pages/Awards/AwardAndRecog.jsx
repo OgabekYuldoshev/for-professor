@@ -19,7 +19,7 @@ const pageVariants = {
 };
 
 const BestPaper = () => {
-  const { items, isLoading } = useList({ type: 1 });
+  const { items, isLoading } = useList({ type: "1,2" });
 
   return (
     <motion.div
