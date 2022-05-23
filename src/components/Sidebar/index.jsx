@@ -33,6 +33,132 @@ const Sidebar = ({ setSide }) => {
     }
   };
 
+  const MenuItems = [
+    {
+      icon: <HomeOutlined />,
+      label: "Home",
+      key: "/",
+      onClick: () => navigate("/"),
+    },
+    {
+      icon: <UsergroupAddOutlined />,
+      label: "Members",
+      key: "/members",
+      onClick: () => navigate("/members"),
+    },
+    {
+      icon: <BookOutlined />,
+      label: "Publications",
+      key: "/publications",
+      children: [
+        {
+          label: "Highly Cited Articles",
+          key: "/publications/articles",
+          onClick: () => navigate("/publications/articles"),
+        },
+        {
+          label: "Most Downloaded",
+          key: "/publications/downloaded",
+          onClick: () => navigate("/publications/downloaded"),
+        },
+        {
+          label: "Journals",
+          key: "/publications/journals",
+          onClick: () => navigate("/publications/journals"),
+        },
+        {
+          label: "Conferences",
+          key: "/publications/conferences",
+          onClick: () => navigate("/publications/conferences"),
+        },
+        {
+          label: "Book Chapters",
+          key: "/publications/book-chapters",
+          onClick: () => navigate("/publications/book-chapters"),
+        },
+      ],
+    },
+
+    {
+      icon: <FileTextOutlined />,
+      label: "Patents",
+      key: "/patents",
+      onClick: () => navigate("/patents"),
+    },
+    {
+      icon: <BookOutlined />,
+      label: "Books",
+      key: "/books",
+      onClick: () => navigate("/books"),
+    },
+
+    {
+      icon: <BarChartOutlined />,
+      label: "Projects",
+      key: "/projects",
+      onClick: () => navigate("/projects"),
+    },
+    {
+      icon: <MessageOutlined />,
+      label: "Research Consultancy",
+      key: "/research",
+      onClick: () => navigate("/research"),
+    },
+    {
+      icon: <UserOutlined />,
+      label: "Professional Activities and Services",
+      key: "/professional",
+      onClick: () => navigate("/professional"),
+    },
+    {
+      icon: <GiftOutlined />,
+      label: "Awards and Recognations",
+      key: "/awards",
+      children: [
+        {
+          label: "Awards and Recognations",
+          key: "/awards/award",
+          onClick: () => navigate("/awards/award"),
+        },
+        {
+          label: "Travel Grands",
+          key: "/awards/grants",
+          onClick: () => navigate("/awards/grants"),
+        },
+        {
+          label: "Best Paper Awards",
+          key: "/awards/best",
+          onClick: () => navigate("/awards/best"),
+        },
+      ],
+    },
+
+    {
+      icon: <BranchesOutlined />,
+      label: "Research Collaborations",
+      key: "/collaborations",
+      onClick: () => navigate("/collaborations"),
+    },
+    {
+      icon: <SolutionOutlined />,
+      label: "News",
+      key: "/news",
+      onClick: () => navigate("/news"),
+    },
+    {
+      icon: <CameraOutlined />,
+      label: "Gallery",
+      key: "/gallery",
+      onClick: () => navigate("/gallery"),
+    },
+    {
+      icon: <PhoneOutlined />,
+      label: "Contacts",
+      key: "/contacts",
+      onClick: () => navigate("/contacts"),
+    },
+  ];
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center my-8">
@@ -52,150 +178,12 @@ const Sidebar = ({ setSide }) => {
         </h1>
       </div>
       <Menu
+        items={MenuItems}
         onSelect={handleClose}
         className="bg-transparent text-white border-none"
         defaultSelectedKeys={[location.pathname]}
         mode="inline"
-      >
-        <Menu.Item
-          icon={<HomeOutlined />}
-          key="/"
-          onClick={() => navigate("/")}
-        >
-          Home
-        </Menu.Item>
-        <Menu.Item
-          icon={<UsergroupAddOutlined />}
-          key="/members"
-          onClick={() => navigate("/members")}
-        >
-          Memebers
-        </Menu.Item>
-        <Menu.SubMenu
-          icon={<BookOutlined />}
-          key="/publications"
-          title="Publications"
-        >
-          <Menu.Item
-            key="/publications/articles"
-            onClick={() => navigate("/publications/articles")}
-          >
-            Highly Cited Articles
-          </Menu.Item>
-          <Menu.Item
-            key="/publications/downloaded"
-            onClick={() => navigate("/publications/downloaded")}
-          >
-            Most Downloaded Articles
-          </Menu.Item>
-          <Menu.Item
-            key="/publications/journals"
-            onClick={() => navigate("/publications/journals")}
-          >
-            Journals
-          </Menu.Item>
-          <Menu.Item
-            key="/publications/conferences"
-            onClick={() => navigate("/publications/conferences")}
-          >
-            Conferences
-          </Menu.Item>
-          <Menu.Item
-            key="/publications/book-chapters"
-            onClick={() => navigate("/publications/book-chapters")}
-          >
-            Book Chapters
-          </Menu.Item>
-        </Menu.SubMenu>
-
-        <Menu.Item
-          icon={<FileTextOutlined />}
-          key="/patents"
-          onClick={() => navigate("/patents")}
-        >
-          Patents
-        </Menu.Item>
-        <Menu.Item
-          icon={<BookOutlined />}
-          key="/books"
-          onClick={() => navigate("/books")}
-        >
-          Books
-        </Menu.Item>
-        <Menu.Item
-          icon={<BarChartOutlined />}
-          key="/projects"
-          onClick={() => navigate("/projects")}
-        >
-          Projects
-        </Menu.Item>
-        <Menu.Item
-          icon={<MessageOutlined />}
-          key="/research"
-          onClick={() => navigate("/research")}
-        >
-          Research Consultancy
-        </Menu.Item>
-        <Menu.Item
-          icon={<UserOutlined />}
-          key="/professional"
-          onClick={() => navigate("/professional")}
-        >
-          Professional Activities and Services
-        </Menu.Item>
-        <Menu.SubMenu
-          icon={<GiftOutlined />}
-          key="/awards"
-          title="Awards and Recognations"
-        >
-          <Menu.Item
-            key="/awards/award"
-            onClick={() => navigate("/awards/award")}
-          >
-            Awards and Recognations
-          </Menu.Item>
-          <Menu.Item
-            key="/awards/grants"
-            onClick={() => navigate("/awards/grants")}
-          >
-            Travel Grants
-          </Menu.Item>
-          <Menu.Item
-            key="/awards/best"
-            onClick={() => navigate("/awards/best")}
-          >
-            Best Paper Awards
-          </Menu.Item>
-        </Menu.SubMenu>
-        <Menu.Item
-          icon={<BranchesOutlined />}
-          key="/collaborations"
-          onClick={() => navigate("/collaborations")}
-        >
-          Research Collaborations
-        </Menu.Item>
-        <Menu.Item
-          icon={<SolutionOutlined />}
-          key="/news"
-          onClick={() => navigate("/news")}
-        >
-          News
-        </Menu.Item>
-        <Menu.Item
-          icon={<CameraOutlined />}
-          key="/gallery"
-          onClick={() => navigate("/gallery")}
-        >
-          Gallery
-        </Menu.Item>
-        <Menu.Item
-          icon={<PhoneOutlined />}
-          key="/contacts"
-          onClick={() => navigate("/contacts")}
-        >
-          Contacts
-        </Menu.Item>
-      </Menu>
+      />
     </div>
   );
 };
