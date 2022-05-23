@@ -13,6 +13,7 @@ import {
   HomeOutlined,
   MessageOutlined,
   PhoneOutlined,
+  SolutionOutlined,
   UsergroupAddOutlined,
   UserOutlined,
 } from "@ant-design/icons";
@@ -172,6 +173,13 @@ const Sidebar = ({ setSide }) => {
           onClick={() => navigate("/collaborations")}
         >
           Research Collaborations
+        </Menu.Item>
+        <Menu.Item
+          icon={<SolutionOutlined />}
+          key="/news"
+          onClick={() => navigate("/news")}
+        >
+          News
         </Menu.Item>
         <Menu.Item
           icon={<CameraOutlined />}

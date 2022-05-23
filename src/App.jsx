@@ -22,6 +22,8 @@ import BestPaperPage from "./pages/Awards/BestPaper";
 import CollabarationPage from "./pages/Collaboration";
 import GalleryPage from "./pages/Gallery";
 import ContactsPage from "./pages/Contacts";
+import NewsPage from "./pages/News";
+
 import useUser from "./modules/contacts/useList";
 
 const App = () => {
@@ -60,6 +62,7 @@ const App = () => {
           <Route path="/collaborations" element={<CollabarationPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/news" element={<NewsPage />} />
 
           <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Routes>

@@ -10,6 +10,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useQueryClient } from "react-query";
 import useList from "../modules/home/useList";
+import { config } from "../../config";
+import moment from "moment";
 
 const pageVariants = {
   initial: {
@@ -28,7 +30,7 @@ const pageVariants = {
 
 const Home = () => {
   const { items } = useList();
-  console.log(items);
+  // console.log(items);
   const queryClient = useQueryClient();
   const data = queryClient.getQueryData(["CONTACTS"], { exact: false });
   const item = data?.item;
@@ -43,31 +45,18 @@ const Home = () => {
       <h1 className="text-2xl underline mb-8">
         {item?.name?.toUpperCase() || "USER"}'S RESEARCH GROUP
       </h1>
-      <Carousel>
-        <img
-          className="h-80 object-cover"
-          src="https://wallpaperaccess.com/full/138728.jpg"
-          alt="image"
-        />
 
-        <img
-          className="h-80 object-cover"
-          src="https://wallpaperaccess.com/full/138728.jpg"
-          alt="image"
-        />
-
-        <img
-          className="h-80 object-cover"
-          src="https://wallpaperaccess.com/full/138728.jpg"
-          alt="image"
-        />
-
-        <img
-          className="h-80 object-cover"
-          src="https://wallpaperaccess.com/full/138728.jpg"
-          alt="image"
-        />
-      </Carousel>
+      {!!items?.sliders.length ? (
+        <Carousel>
+          {items?.sliders?.map((item) => (
+            <img
+              className="h-80 object-cover"
+              src={`${config.app.baseUrl}/${item?.image}`}
+              alt={item?.title}
+            />
+          ))}
+        </Carousel>
+      ) : null}
 
       <div className="my-5 grid lg:grid-cols-2 grid-cols-1 gap-5">
         {/* Analitika */}
@@ -108,7 +97,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-
+          {/* 
           <div>
             <div className="mb-5">
               <h2 className="text-base">Google Scholar</h2>
@@ -160,7 +149,7 @@ const Home = () => {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Resent News */}
@@ -172,16 +161,14 @@ const Home = () => {
             style={{ height: "30rem" }}
             className="bg-white rounded-lg p-8 overflow-y-auto flex flex-col gap-3 scroll relative"
           >
-            {Array.from(Array(12).keys()).map((item) => (
+            {items?.news?.map((item) => (
               <div className="flex gap-3 border-b" key={item}>
                 <ReadOutlined className="text-lg" />
-                <div>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Sed vero nam error labore! Magni maxime quos odio libero
-                    quas animi.
+                <div className="flex flex-col w-full">
+                  <p>{item.title}</p>
+                  <p className="text-right text-xs text-gray-500 self-end">
+                    {moment(item?.created_at).format("LLLL")}
                   </p>
-                  <p className="text-right text-xs text-gray-500">12.12.2002</p>
                 </div>
               </div>
             ))}
