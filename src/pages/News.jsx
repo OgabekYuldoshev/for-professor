@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import useList from "../modules/news/useList";
 import { ClipLoader } from "react-spinners";
+import { config } from "../../config";
 
 const pageVariants = {
   initial: {
@@ -20,6 +21,7 @@ const pageVariants = {
 
 const Projects = () => {
   const { items, isLoading } = useList();
+  const data = items?.data;
   return (
     <motion.div
       initial="initial"
@@ -37,7 +39,7 @@ const Projects = () => {
       )}
 
       <div className="flex flex-col gap-5">
-        {items?.map((item, index) =>
+        {data?.map((item, index) =>
           !(index & 1) ? (
             <div
               key={index}
@@ -94,6 +96,7 @@ const Projects = () => {
                 <p className="text-gray-800 md:text-right text-center">
                   {item?.text}
                 </p>
+                <span>{moment(item?.created_at).format("LLLL")}</span>
               </div>
               <div className="md:flex hidden">
                 <div>
