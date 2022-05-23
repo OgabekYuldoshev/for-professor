@@ -18,7 +18,7 @@ const pageVariants = {
 };
 
 const Downloaded = () => {
-  const { items } = useList({ type: 2 });
+  const { items } = useList({ params: { type: 2 } });
 
   return (
     <motion.div
