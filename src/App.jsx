@@ -23,7 +23,6 @@ import CollabarationPage from "./pages/Collaboration";
 import GalleryPage from "./pages/Gallery";
 import ContactsPage from "./pages/Contacts";
 import NewsPage from "./pages/News";
-
 import useUser from "./modules/contacts/useList";
 
 const App = () => {
