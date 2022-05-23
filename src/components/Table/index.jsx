@@ -89,7 +89,7 @@ const Table = ({ loading = false, dataSource }) => {
       title: "Publication",
       key: "id",
       sorter: true,
-      ...getColumnSearchProps("title"),
+      ...getColumnSearchProps("name"),
       render: (item) => (
         <>
           <a
