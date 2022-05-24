@@ -47,7 +47,7 @@ const Home = () => {
       </h1>
 
       {!!items?.sliders.length ? (
-        <Carousel>
+        <Carousel autoplay>
           {items?.sliders?.map((item) => (
             <img
               key={item}
