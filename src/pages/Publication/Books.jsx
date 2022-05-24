@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Table from "../../components/Table";
 import { motion } from "framer-motion";
-import useList from "../../modules/publication/useList";
+import useList from "../../modules/publication/useWithTable";
 import DatePicker from "react-datepicker";
 
 const pageVariants = {
@@ -20,10 +20,11 @@ const pageVariants = {
 };
 
 const Books = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const { items } = useList({
+  const [startDate, setStartDate] = useState(undefined);
+  const { items, isFetching } = useList({
     params: { type: 5, year: startDate?.getFullYear() },
   });
+  const data = items?.data;
 
   return (
     <motion.div
@@ -45,7 +46,7 @@ const Books = () => {
           />
         </div>
       </div>
-      <Table loading={!items?.length} dataSource={items} />
+      <Table loading={isFetching} dataSource={data} />
     </motion.div>
   );
 };

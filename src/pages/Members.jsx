@@ -80,9 +80,16 @@ const Members = () => {
                           {item?.text}
                         </p>
                         <div className="flex gap-2 flex-wrap mt-5">
-                          <div className="badge badge-primary cursor-pointer">
-                            primary
-                          </div>
+                          {Array.isArray(item?.links) &&
+                            item?.links?.map((obj) => (
+                              <a
+                                href={obj?.link}
+                                target="_blank"
+                                className="badge badge-primary cursor-pointer"
+                              >
+                                {obj.link_name}
+                              </a>
+                            ))}
                         </div>
                       </div>
                     </div>
@@ -119,12 +126,16 @@ const Members = () => {
                           {item?.text}
                         </p>
                         <div className="flex gap-2 flex-wrap mt-5 md:justify-end justify-start">
-                          <div className="badge badge-primary cursor-pointer">
-                            primary
-                          </div>
-                          <div className="badge badge-secondary cursor-pointer">
-                            primary
-                          </div>
+                          {Array.isArray(item?.links) &&
+                            item?.links?.map((obj) => (
+                              <a
+                                href={obj?.link}
+                                target="_blank"
+                                className="badge badge-primary cursor-pointer"
+                              >
+                                {obj.link_name}
+                              </a>
+                            ))}
                         </div>
                       </div>
                       <div className="md:flex hidden">
@@ -271,9 +282,16 @@ const Members = () => {
                           {item?.text}
                         </p>
                         <div className="flex gap-2 flex-wrap mt-5">
-                          <div className="badge badge-primary cursor-pointer">
-                            primary
-                          </div>
+                          {Array.isArray(item?.links) &&
+                            item?.links?.map((obj) => (
+                              <a
+                                href={obj?.link}
+                                target="_blank"
+                                className="badge badge-primary cursor-pointer"
+                              >
+                                {obj.link_name}
+                              </a>
+                            ))}
                         </div>
                       </div>
                     </div>
@@ -310,12 +328,16 @@ const Members = () => {
                           {item?.text}
                         </p>
                         <div className="flex gap-2 flex-wrap mt-5 md:justify-end justify-start">
-                          <div className="badge badge-primary cursor-pointer">
-                            primary
-                          </div>
-                          <div className="badge badge-secondary cursor-pointer">
-                            primary
-                          </div>
+                          {Array.isArray(item?.links) &&
+                            item?.links?.map((obj) => (
+                              <a
+                                href={obj?.link}
+                                target="_blank"
+                                className="badge badge-primary cursor-pointer"
+                              >
+                                {obj.link_name}
+                              </a>
+                            ))}
                         </div>
                       </div>
                       <div className="md:flex hidden">

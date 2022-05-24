@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Table from "../../components/Table";
 import { motion } from "framer-motion";
-import useList from "../../modules/publication/useList";
+import useList from "../../modules/publication/useWithTable";
 import DatePicker from "react-datepicker";
 
 const pageVariants = {
@@ -20,10 +20,12 @@ const pageVariants = {
 };
 
 const Conferences = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const { items } = useList({
+  const [startDate, setStartDate] = useState(undefined);
+  const { items, isFetching } = useList({
     params: { type: 4, year: startDate?.getFullYear() },
   });
+
+  const data = items?.data;
 
   return (
     <motion.div
@@ -37,6 +39,7 @@ const Conferences = () => {
         <h2 className="text-2xl  mb-5 underline">Conferences</h2>
         <div>
           <DatePicker
+            placeholderText="Select year"
             className="focus:outline-none focus:border-green-500 border px-4 py-1 rounded text-base"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
@@ -45,7 +48,7 @@ const Conferences = () => {
           />
         </div>
       </div>
-      <Table loading={!items?.length} dataSource={items} />
+      <Table loading={isFetching} dataSource={data} />
     </motion.div>
   );
 };

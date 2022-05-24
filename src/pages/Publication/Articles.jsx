@@ -18,7 +18,7 @@ const pageVariants = {
 };
 
 const Articles = () => {
-  const { items } = useList({ params: { type: 1 } });
+  const { items } = useList({ type: 1 });
   // console.log(items);
   return (
     <motion.div

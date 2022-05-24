@@ -162,20 +162,55 @@ const Home = () => {
             style={{ height: "30rem" }}
             className="bg-white rounded-lg p-8 overflow-y-auto flex flex-col gap-3 scroll relative"
           >
-            {items?.news?.map((item) => (
-              <div className="flex gap-3 border-b" key={item}>
-                <ReadOutlined className="text-lg" />
-                <div className="flex flex-col w-full">
-                  <p>{item.title}</p>
-                  <p className="text-right text-xs text-gray-500 self-end">
-                    {moment(item?.created_at).format("LLLL")}
-                  </p>
+            {items?.news?.length ? (
+              items?.news?.map((item) => (
+                <div className="flex gap-3 border-b" key={item}>
+                  <ReadOutlined className="text-lg" />
+                  <div className="flex flex-col w-full">
+                    <p>{item.title}</p>
+                    <p className="text-right text-xs text-gray-500 self-end">
+                      {moment(item?.created_at).format("LLLL")}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p className="text-center"> There is no news yet </p>
+            )}
           </div>
         </div>
       </div>
+
+      {item?.about ? (
+        <>
+          <h2 className="text-lg my-8 bg-white text-center p-2 rounded bg-blue-500 text-white">
+            About the Lab
+          </h2>
+          <div className="bg-white rounded-lg text-base p-5">{item.about}</div>
+        </>
+      ) : null}
+
+      {item?.experts_at_our ? (
+        <>
+          <h2 className="text-lg my-8 bg-white text-center p-2 rounded bg-blue-500 text-white">
+            Experts at our Lab
+          </h2>
+          <div className="bg-white rounded-lg text-base p-5">
+            {item.experts_at_our}
+          </div>
+        </>
+      ) : null}
+
+      {item?.who_we_are ? (
+        <>
+          <h2 className="text-lg my-8 bg-white text-center p-2 rounded bg-blue-500 text-white">
+            Who we are
+          </h2>
+          <div className="bg-white rounded-lg text-base p-5">
+            {item.who_we_are}
+          </div>
+        </>
+      ) : null}
     </motion.div>
   );
 };

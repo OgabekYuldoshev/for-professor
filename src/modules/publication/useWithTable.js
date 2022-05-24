@@ -2,11 +2,11 @@
 import { useQuery } from "react-query";
 import * as Api from "./api";
 
-const useList = ({ type }) => {
+const useList = ({ params }) => {
     const { data, ...args } = useQuery(
-        ["PUBLICATION", "list", type],
+        ["PUBLICATION", "listWithTable", params],
         async () => {
-            const { data } = await Api.List({ type });
+            const { data } = await Api.ListWithTable({ params });
 
             return { items: data?.data || [] };
         },
