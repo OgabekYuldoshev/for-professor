@@ -1,12 +1,5 @@
-
-name: Node.js CI
-
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+on: push
+name: 🚀 Deploy website on push
 jobs:
  web-deploy:
     name: 🎉 Deploy
@@ -26,7 +19,7 @@ jobs:
         npm run build
     
     - name: 📂 Sync files
-      uses: OgabekYuldoshev/for-professor@2.0.0
+      uses: OgabekYuldoshev/for-professor@latest
       with:
         server: ftp.khojamatov.uz
         username: forprofessor@khojamatov.uz
