@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: google-github-actions/setup-gcloud@v0
+      uses: actions/checkout@v2
 
     - name: Use Node.js 14
       uses: actions/setup-node@v2
@@ -19,7 +19,7 @@ jobs:
         npm run build
     
     - name: 📂 Sync files
-      uses: OgabekYuldoshev/for-professor@2.0.0
+      uses: OgabekYuldoshev/for-professor@master
       with:
         server: ftp.khojamatov.uz
         username: forprofessor@khojamatov.uz
