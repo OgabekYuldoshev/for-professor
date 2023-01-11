@@ -19,8 +19,10 @@ jobs:
         npm run build
     
     - name: 📂 Sync files
-      uses: ${{ github.repository }}
+      uses: OgabekYuldoshev/for-professor@master
       with:
         server: ftp.khojamatov.uz
         username: forprofessor@khojamatov.uz
         password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: public
+        git-ftp-args: --insecure
