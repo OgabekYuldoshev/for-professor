@@ -19,7 +19,7 @@ jobs:
         npm run build
     
     - name: 📂 Sync files
-      uses: ./.github/workflows/action.yml
+      uses: OgabekYuldoshev/for-professor@master
       with:
         server: ftp.khojamatov.uz
         username: forprofessor@khojamatov.uz
