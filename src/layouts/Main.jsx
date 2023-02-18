@@ -51,7 +51,7 @@ const Main = ({ children }) => {
             <span className="font-bold">{item?.name || "User"}</span> ©{" "}
             {new Date().getFullYear()}
           </p>
-          <p>
+          {/* <p>
             Powered by{" "}
             <a
               href="https://yuldoshev.vercel.app/"
@@ -60,8 +60,7 @@ const Main = ({ children }) => {
             >
               Ogabek Yuldoshev
             </a>
-            
-          </p>
+          </p> */}
         </Layout.Footer>
       </Layout>
     </Layout>
