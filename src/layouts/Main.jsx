@@ -60,6 +60,7 @@ const Main = ({ children }) => {
             >
               Ogabek Yuldoshev
             </a>
+            
           </p> */}
         </Layout.Footer>
       </Layout>
