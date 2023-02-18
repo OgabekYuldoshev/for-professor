@@ -48,8 +48,8 @@ const Main = ({ children }) => {
         </Layout.Content>
         <Layout.Footer className="flex md:justify-between justify-center md:flex-row flex-col items-center border-t gap-3">
           <p>
-            <span className="font-bold">{item?.name || "User"}</span> ©{" "}
-            {new Date().getFullYear()}
+            {/* <span className="font-bold">{item?.name || "User"}</span> ©{" "} */}
+            {/* {new Date().getFullYear()} */}
           </p>
           {/* <p>
             Powered by{" "}
