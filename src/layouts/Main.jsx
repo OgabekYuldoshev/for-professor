@@ -51,16 +51,16 @@ const Main = ({ children }) => {
             <span className="font-bold">{item?.name || "User"}</span> ©{" "}
             {new Date().getFullYear()}
           </p>
-          {/* <p>
+          <p>
             Powered by{" "}
             <a
               href="https://yuldoshev.vercel.app/"
               target="_blank"
               className="font-bold"
             >
-              Ogabek Yuldoshev
+              Halimjon Khujamatov
             </a>
-          </p> */}
+          </p>
         </Layout.Footer>
       </Layout>
     </Layout>
