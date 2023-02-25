@@ -40,12 +40,12 @@ const Sidebar = ({ setSide }) => {
       key: "/",
       onClick: () => navigate("/"),
     },
-    {
-      icon: <UsergroupAddOutlined />,
-      label: "Members",
-      key: "/members",
-      onClick: () => navigate("/members"),
-    },
+    // {
+    //   icon: <UsergroupAddOutlined />,
+    //   label: "Members",
+    //   key: "/members",
+    //   onClick: () => navigate("/members"),
+    // },
     {
       icon: <BookOutlined />,
       label: "Publications",
