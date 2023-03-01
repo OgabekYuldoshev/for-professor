@@ -40,12 +40,12 @@ const Sidebar = ({ setSide }) => {
       key: "/",
       onClick: () => navigate("/"),
     },
-    // {
-    //   icon: <UsergroupAddOutlined />,
-    //   label: "Members",
-    //   key: "/members",
-    //   onClick: () => navigate("/members"),
-    // },
+    {
+      icon: <UsergroupAddOutlined />,
+      label: "Members",
+      key: "/members",
+      onClick: () => navigate("/members"),
+    },
     {
       icon: <BookOutlined />,
       label: "Publications",
@@ -161,9 +161,9 @@ const Sidebar = ({ setSide }) => {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-center my-8">
+      <div className="flex flex-col items-center justify-center my-8 font-bold">
         <div className="avatar">
-          <div className="w-28 rounded-full">
+          <div className="w-36 rounded-full">
             <img
               src={
                 item?.image

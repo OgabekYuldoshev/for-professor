@@ -46,7 +46,7 @@ const Main = ({ children }) => {
         <Layout.Content className="p-8 bg-gray-100 w-full min-h-auto mt-20 lg:px-12 px-5">
           {children}
         </Layout.Content>
-        {/* <Layout.Footer className="flex md:justify-between justify-center md:flex-row flex-col items-center border-t gap-3">
+        <Layout.Footer className="flex md:justify-between justify-center md:flex-row flex-col items-center border-t gap-3">
           <p>
             <span className="font-bold">{item?.name || "User"}</span> ©{" "}
             {new Date().getFullYear()}
@@ -61,7 +61,7 @@ const Main = ({ children }) => {
               Halimjon Khujamatov
             </a>
           </p>
-        </Layout.Footer> */}
+        </Layout.Footer>
       </Layout>
     </Layout>
   );

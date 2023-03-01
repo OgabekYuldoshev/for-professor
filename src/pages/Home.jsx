@@ -42,7 +42,7 @@ const Home = () => {
       transition={{ duration: 0.5 }}
       variants={pageVariants}
     >
-      <h1 className="text-2xl underline mb-8">
+      <h1 className="text-2xl font-medium mb-8">
         {item?.name?.toUpperCase() || "USER"}'S RESEARCH GROUP
       </h1>
 
@@ -51,7 +51,7 @@ const Home = () => {
           {items?.sliders?.map((item) => (
             <img
               key={item}
-              className="h-80 object-cover"
+              className="h-96 object-cover"
               src={`${config.app.baseUrl}/${item?.image}`}
               alt={item?.title}
             />
@@ -64,10 +64,10 @@ const Home = () => {
         <div className="flex flex-col gap-5">
           <div>
             <div className="mb-5">
-              <h2 className="text-base">Publication</h2>
+              <h2 className="text-base">Publications</h2>
             </div>
             <div className="grid md:grid-cols-3 grid-cols-2 gap-5">
-              <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
+              <div className="p-5 bg-emerald-100 rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
                   title="Journal publications"
                   value={items?.publications?.journals || 0}
@@ -75,57 +75,62 @@ const Home = () => {
                 />
               </div>
 
-              <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
+              <div className="p-5 bg-orange-100 rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
-                  title="Book chapters"
+                  title="Book and their chapters"
                   value={items?.publications?.books || 0}
                   prefix={<BookOutlined />}
                 />
               </div>
-              <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
+
+              <div className="p-5 bg-indigo-200 rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
                   title="Conference Proceedings"
                   value={items?.publications?.conferences || 0}
                   prefix={<MessageOutlined />}
                 />
               </div>
-              <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
+
+              {/* <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
                   title="Authored/Edited books"
                   value={items?.publications?.authored_and_edited_books || 0}
                   prefix={<BookOutlined />}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
-          {/* 
+          
           <div>
             <div className="mb-5">
-              <h2 className="text-base">Google Scholar</h2>
+              <h2 className="text-base">Index rates</h2>
             </div>
             <div className="grid md:grid-cols-3 grid-cols-2 gap-5">
-              <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
+
+              <div className="p-5 bg-lime-200 rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
-                  title="Feedback"
-                  value={1128}
+                  title="Citations"
+                  value={24}
                   prefix={<LikeOutlined />}
                 />
               </div>
 
-              <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
+              <div className="p-5 bg-lime-200 rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
-                  title="Feedback"
-                  value={1128}
+                  title="H-index"
+                  value={54}
                   prefix={<LikeOutlined />}
                 />
               </div>
-              <div className="p-5 bg-white rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
+
+              <div className="p-5 bg-lime-200 rounded-lg flex justify-center hover:scale-105 duration-300 hover:shadow-lg">
                 <Statistic
-                  title="Feedback"
-                  value={1128}
+                  title="i10-index"
+                  value={12}
                   prefix={<LikeOutlined />}
                 />
               </div>
+
             </div>
           </div>
 
@@ -150,7 +155,7 @@ const Home = () => {
                 />
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
 
         {/* Resent News */}
@@ -183,7 +188,7 @@ const Home = () => {
 
       {item?.about ? (
         <>
-          <h2 className="text-lg my-8 bg-white text-center p-2 rounded bg-blue-500 text-white">
+          <h2 className="text-lg my-8 bg-blue text-center p-2 rounded bg-blue-500 text-white">
             About the Lab
           </h2>
           <div className="bg-white rounded-lg text-base p-5">{item.about}</div>
@@ -192,7 +197,7 @@ const Home = () => {
 
       {item?.experts_at_our ? (
         <>
-          <h2 className="text-lg my-8 bg-white text-center p-2 rounded bg-blue-500 text-white">
+          <h2 className="text-lg my-8 bg-blue text-center p-2 rounded bg-blue-500 text-white">
             Experts at our Lab
           </h2>
           <div className="bg-white rounded-lg text-base p-5">
@@ -203,7 +208,7 @@ const Home = () => {
 
       {item?.who_we_are ? (
         <>
-          <h2 className="text-lg my-8 bg-white text-center p-2 rounded bg-blue-500 text-white">
+          <h2 className="text-lg my-8 bg-blue text-center p-2 rounded bg-blue-500 text-white">
             Who we are
           </h2>
           <div className="bg-white rounded-lg text-base p-5">
