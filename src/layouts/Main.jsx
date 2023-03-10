@@ -58,7 +58,7 @@ const Main = ({ children }) => {
               target="_blank"
               className="font-bold"
             >
-              Ogabek Yuldoshev
+              Halimjon Khujamatov
             </a>
           </p>
         </Layout.Footer>

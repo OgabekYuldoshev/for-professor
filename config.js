@@ -1,6 +1,6 @@
 export const config = {
     app: {
-        name: 'Ogabek Yuldoshev',
-        baseUrl: "http://admin.khojamatov.uz/public"
+        name: 'Halimjon Khujamatov',
+        baseUrl: "https://admin.halimjonkhujamatov.uz"
     },
 }
